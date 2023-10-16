@@ -20,7 +20,7 @@ set.seed(1086)
 
 resampMeanDiff <- numeric(nreps)
 for (i in 1:nreps) {
-       signs <- sample( c(1,-1),length(difference), replace = T)
+       signs <- sample( c(1,-1),length(difference), replace = TRUE)
        resamp <- difference * signs
        resampMeanDiff[i] <- mean(resamp)
        }
@@ -73,7 +73,7 @@ set.seed(1086)
 
 resampMeanDiff <- numeric(nreps)
 for (i in 1:nreps) {
-       signs <- sample( c(1,-1),length(difference), replace = T)
+       signs <- sample( c(1,-1),length(difference), replace = TRUE)
        resamp <- difference * signs
        resampMeanDiff[i] <- mean(resamp)
        }
@@ -89,7 +89,7 @@ set.seed(1086)
 
 resampMeanDiff2 <- numeric(nreps2)
 for (i in 1:nreps2) {
-       signs <- sample( c(1,-1),length(difference), replace = T)
+       signs <- sample( c(1,-1),length(difference), replace = TRUE)
        resamp2 <- difference * signs
        resampMeanDiff2[i] <- mean(resamp2)
        }
