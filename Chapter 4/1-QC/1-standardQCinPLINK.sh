@@ -41,8 +41,7 @@ plink \
 --bfile ${OUT1}/${PLINK1}_QC3 \
 --het \
 --check-sex \
---check-sex ycount \
---genome
+--check-sex ycount
 
 # calculate pairwise IBD
 plink \
