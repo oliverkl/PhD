@@ -36,10 +36,24 @@ plink \
 --make-bed  \
 --out ${OUT1}/${PLINK1}_QC3
 
-# identify outliers in heterozygosity, sex failures and calculate pairwise IBD
+# identify outliers in heterozygosity and sex failures
 plink \
 --bfile ${OUT1}/${PLINK1}_QC3 \
 --het \
 --check-sex \
 --check-sex ycount \
 --genome
+
+# calculate pairwise IBD
+plink \
+--bfile ${OUT1}/${PLINK1}_QC3 \
+--indep-pairwise 50 5 0.2 \
+--allow-no-sex \
+--out ${OUT1}/${PLINK1}_QC3
+
+plink \
+--bfile ${OUT1}/${PLINK1}_QC3 \
+--extract ${OUT1}/${PLINK1}_QC3.prune.in \
+--allow-no-sex \
+--genome \
+--out ${OUT1}/${PLINK1}_QC3
