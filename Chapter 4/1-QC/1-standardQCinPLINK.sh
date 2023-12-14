@@ -31,7 +31,7 @@ plink \
 plink \
 --allow-no-sex \
 --bfile ${OUT1}/${PLINK1}_QC2_samp_0.98 \
---maf 0.05 \
+--maf 0.005 \
 --hwe 1e-6 midp \
 --make-bed  \
 --out ${OUT1}/${PLINK1}_QC3
